@@ -1,28 +1,31 @@
 package org.jumpmind.symmetric.symmetricandroidclientdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.commons.lang.StringUtils;
+//import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jumpmind.symmetric.android.SQLiteOpenHelperRegistry;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
             String tableFormat = "";
             StringBuilder buff = new StringBuilder();
+
+            //Log.i("AQUI VA LA VAINA");
 
             while (cursor.moveToNext()) {
                 List<String> values = new ArrayList<String>();

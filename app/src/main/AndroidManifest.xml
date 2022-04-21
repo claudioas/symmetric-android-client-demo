@@ -16,8 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <provider android:name="DbProvider"
-            android:authorities="com.google.provider.NotePad"
+
+<!--        android:authorities="com.google.provider.NotePad"-->
+
+
+        <provider android:name=".DbProvider"
+            android:authorities="com.jumpmind.symmetric.DbProviderP2"
             android:exported="false">
             <grant-uri-permission android:pathPattern=".*" />
         </provider>

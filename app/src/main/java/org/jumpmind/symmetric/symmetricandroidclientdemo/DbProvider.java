@@ -1,5 +1,6 @@
 package org.jumpmind.symmetric.symmetricandroidclientdemo;
 
+import java.util.Properties;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,7 +15,7 @@ import org.jumpmind.symmetric.android.SQLiteOpenHelperRegistry;
 import org.jumpmind.symmetric.android.SymmetricService;
 import org.jumpmind.symmetric.common.ParameterConstants;
 
-import java.util.Properties;
+
 
 /**
  * Created by Maxwell on 12/14/2017.
@@ -23,7 +24,8 @@ import java.util.Properties;
 public class DbProvider extends ContentProvider {
 
     //TODO: Update REGISTRATION_URL with Sync URL of corp-000
-    private final String REGISTRATION_URL = "http://YOUR_CORP_IP_ADDRESS:31415/sync/corp-000";
+    //private final String REGISTRATION_URL = "http://201.148.107.169:31415/sync/corp-000";
+    private final String REGISTRATION_URL = "http://201.148.107.169:31415/sync/server-000";
     private final String NODE_ID = "android-003";
     private final String NODE_GROUP = "store";
 
@@ -56,7 +58,7 @@ public class DbProvider extends ContentProvider {
             "    RETURNED_QUANTITY INTEGER\n" +
             ");\n";
 
-    public static final String DATABASE_NAME = "symmetric-demo.db";
+    public static final String DATABASE_NAME = "symmetric-demo-claudio.db";
 
     // Handle to a new DatabaseHelper.
     private DatabaseHelper mOpenHelper;

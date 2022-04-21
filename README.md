@@ -25,4 +25,32 @@ The libs directory will be outputted in a .zip archive to the symmetric-android/
 
 Extract the libs directory and copy the entire directory to the app/libs directory in the Android project.
 
+******************************************ESPAÑOL
+
+# simétrico-android-cliente-demostración
+
+Esta aplicación de Android está diseñada para funcionar con la configuración de demostración utilizada en el tutorial de inicio rápido.
+
+Siga las instrucciones de demostración de inicio rápido para configurar una configuración de ejemplo en su máquina local. Esto creará una configuración con una base de datos corporativa de muestra y dos bases de datos de tiendas. Estas bases de datos están configuradas para sincronizar tablas de muestra denominadas ITEM, ITEM_SELLING_PRICE, SALE_TRANSACTION y SALE_RETURN_LINE_ITEM.
+
+Después de completar las instrucciones de configuración de la demostración de inicio rápido, detenga SymmetricDS, actualice el archivo Engines/corp-000.properties y actualice la propiedad sync.url para reemplazar localhost con la dirección IP de su máquina local.
+
+Una vez que la configuración de demostración esté en funcionamiento, la aplicación de Android se puede configurar para sincronizar datos con su máquina local. La aplicación de demostración actuará como una base de datos de almacenamiento para sincronizar las tablas con las bases de datos corporativas.
+
+A continuación, deberá modificar la clase DbProvider en el código del proyecto de Android. Actualice REGISTRATION_URL String para que sea igual a sync.url en el nodo corp-000 después de que se modificó en la sección anterior.
+
+# Instrucciones de construcción
+
+Este proyecto fue desarrollado utilizando Android Studio 3.0.1, Android SDK 26 y Java 8.
+
+Para compilar, los archivos .jar de SymmetricDS deben compilarse a partir del código fuente de SymmetricDS y copiarse en el proyecto de Android.
+
+El directorio libs que contiene los archivos .jar necesarios se puede descargar como un archivo comprimido zip (symmetric-android-VERSION.zip) desde la página de descargas de SymmetricDS.
+
+De forma alternativa, el directorio libs se puede generar clonando el repositorio de GitHub de symmetric-ds y ejecutando el siguiente comando en el directorio de ensamblaje simétrico:
+./gradlew androidDistZip
+
+El directorio libs se generará en un archivo .zip en el directorio symmetric-android/build/distributions/
+
+Extraiga el directorio libs y copie todo el directorio en el directorio app/libs en el proyecto de Android.
 
