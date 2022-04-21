@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
+        //exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
+        //exclude 'META-INF/NOTICE'
+        //exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude("META-INF/*.kotlin_module")
+        //exclude 'META-INF/ASL2.0'
+        //exclude("META-INF/*.kotlin_module")
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,7 +37,8 @@ android {
 
 dependencies {
     // Include the entire app/libs/ directory as compile dependencies
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // Workaround for SymmetricDS 3.9 versions with missing commons-lang dependencies
     // compile group: 'commons-lang', name: 'commons-lang', version: '2.6'

@@ -58,7 +58,7 @@ public class DbProvider extends ContentProvider {
             "    RETURNED_QUANTITY INTEGER\n" +
             ");\n";
 
-    public static final String DATABASE_NAME = "symmetric-demo-claudio.db";
+    public static final String DATABASE_NAME = "symmetric-demo-claudio921.db";
 
     // Handle to a new DatabaseHelper.
     private DatabaseHelper mOpenHelper;

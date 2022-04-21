@@ -69,28 +69,28 @@ public class MainActivity extends AppCompatActivity {
             String tableFormat = "";
             StringBuilder buff = new StringBuilder();
 
-            //Log.i("AQUI VA LA VAINA");
+            System.out.println("va por aqui");
 
-            while (cursor.moveToNext()) {
-                List<String> values = new ArrayList<String>();
-                String[] columnNames = cursor.getColumnNames();
-                if (buff.length() == 0) {
-                    for (int i = 0; i < cursor.getColumnCount(); i++) {
-                        tableFormat += "%-" + COLUMN_WIDTH + "s|";
-                    }
-
-                    for (int j = 0; j < columnNames.length; j++) {
-                        columnNames[j] = StringUtils.abbreviate(columnNames[j], COLUMN_WIDTH);
-                    }
-
-                    buff.append(String.format(tableFormat, columnNames)).append("\n");
-                }
-
-                for (int i = 0; i < cursor.getColumnCount(); i++) {
-                    values.add(StringUtils.abbreviate(cursor.getString(i), COLUMN_WIDTH));
-                }
-                buff.append(String.format(tableFormat, values.toArray(new String[0]))).append("\n");
-            }
+//            while (cursor.moveToNext()) {
+//                List<String> values = new ArrayList<String>();
+//                String[] columnNames = cursor.getColumnNames();
+//                if (buff.length() == 0) {
+//                    for (int i = 0; i < cursor.getColumnCount(); i++) {
+//                        tableFormat += "%-" + COLUMN_WIDTH + "s|";
+//                    }
+//
+//                    for (int j = 0; j < columnNames.length; j++) {
+//                        columnNames[j] = StringUtils.abbreviate(columnNames[j], COLUMN_WIDTH);
+//                    }
+//
+//                    buff.append(String.format(tableFormat, columnNames)).append("\n");
+//                }
+//
+//                for (int i = 0; i < cursor.getColumnCount(); i++) {
+//                    values.add(StringUtils.abbreviate(cursor.getString(i), COLUMN_WIDTH));
+//                }
+//                buff.append(String.format(tableFormat, values.toArray(new String[0]))).append("\n");
+//            }
 
             outputTextView.setText(buff.toString());
 
